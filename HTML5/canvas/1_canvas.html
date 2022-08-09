@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas</title>
+    <script src="./8_curve.js"></script>
+    <link rel="stylesheet" href="./0_style.css" />
+  </head>
+  <style>
+    p {
+      font: bold 50px Tahoma;
+      /* 顏色一定要放最前面或最後面 */
+      /* x y blur color*/
+      color: #fff;
+      /* text-shadow: 0px 0px 5px #aaa; */
+      /* 多重陰影 */
+      /* 第一個在上面 第二個再下面 */
+      text-shadow: 0px 0px 10px red, blue 5px 5px 10px;
+    }
+  </style>
+  <body>
+    <!-- canvas這個標籤本身就內建width跟height了 此標籤不用寫單位(因為已有預設) -->
+    <!-- canvas寬高寫標籤內: 因為在canvas中 javascript會斷找這個寬高 寫在link style裡 就會一直多繞一圈 -->
+    <p>Style</p>
+    <canvas id="canvas" width="1000" height="800"></canvas>
+  </body>
+</html>
