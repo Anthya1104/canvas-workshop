@@ -47,14 +47,84 @@ function doFirst() {
   context.font = 'bold 25px Tahoma';
   context.strokeStyle = 'red';
   context.lineWidth = 5;
-
-  context.fillText('arc()', 50, 50);
+  //移動到寫字位置
+  context.translate(50, 50);
+  context.fillText('arc()', 0, 0);
+  context.translate(-50, -50);
 
   context.beginPath();
   //最後一個參數 預設是false
   // context.arc(x, y, radius, Math.PI / 180 * startAngle, Math.PI / 180 * endAngle, anticlockwise);
   //圓心x, 圓心y, 半徑, 圓上起始點(角度), 圓上結束點(角度), 方向
   context.arc(250, 200, 150, 0.1 * Math.PI, 1.2 * Math.PI, false);
+  context.stroke();
+
+  //右上
+  context.translate(550, 50);
+  context.fillText('arcTo()', 0, 0);
+  context.translate(-550, -50);
+
+  context.beginPath();
+  context.moveTo(600, 250);
+  context.arcTo(750, 100, 850, 300, 150);
+  context.stroke();
+
+  //輔助線
+  context.beginPath();
+  context.strokeStyle = 'blue';
+  context.lineWidth = 1;
+  context.moveTo(600, 250);
+  context.lineTo(750, 100);
+  context.lineTo(850, 300);
+  context.stroke();
+
+  //左下
+  context.translate(50, 450);
+  context.fillText('quadraticCurveTo()', 0, 0);
+  context.translate(-50, -450);
+
+  context.strokeStyle = 'red';
+  context.lineWidth = 5;
+
+  context.beginPath();
+  context.moveTo(100, 650);
+  context.quadraticCurveTo(250, 250, 350, 700);
+  context.stroke();
+
+  //輔助線
+  context.beginPath();
+  context.strokeStyle = 'blue';
+  context.lineWidth = 1;
+  context.moveTo(100, 650);
+  context.lineTo(250, 250);
+  context.lineTo(350, 700);
+  context.stroke();
+
+  //右下
+  context.translate(550, 450);
+  context.fillText('bezierCurveTo()', 0, 0);
+  context.translate(-550, -450);
+
+  context.strokeStyle = 'red';
+  context.lineWidth = 5;
+
+  context.beginPath();
+  context.moveTo(600, 650);
+  // context.bezierCurveTo(675, 550, 800, 500, 850, 700); //(第一控制點,第二控制點,終點)
+  context.bezierCurveTo(675, 475, 700, 750, 850, 700); //平移
+  context.stroke();
+
+  //輔助線
+  context.beginPath();
+  context.strokeStyle = 'blue';
+  context.lineWidth = 1;
+  context.moveTo(600, 650);
+  //平移前參數
+  // context.lineTo(675, 550);
+  // context.lineTo(800, 500);
+  context.lineTo(675, 475);
+  context.lineTo(700, 750);
+  context.lineTo(850, 700);
   context.stroke();
 }
 

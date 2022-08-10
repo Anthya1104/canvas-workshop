@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Playing Video</title>
+  </head>
+  <body>
+    <!-- 遇到標籤本身是沒有屬性值 (ex: controls) 寫js時可以回傳true false -->
+    <video
+      src="./movies/videoplayback.mp4"
+      controls
+      width="640"
+      height="360"
+      poster="../../MFEE27/images/pink.gif"
+    ></video>
+    <!-- 現在如果加 poster 影片的寬高會跟隨這張圖檔 如果想解決 可以用 width, height 指定寬高 -->
+
+    <!-- 第二種寫法 -> 推薦 -->
+    <!-- video api 針對video標籤 id 需要寫在最外層 (不能寫在source層) -->
+    <video controls>
+      <!-- 可以設定 連續 autoplay -->
+      <source src="./movies/123.mp4" />
+      <!-- 第一個影片不存在 會直接讀到第二支片 -->
+      <source src="./movies/videoplayback.mp4" />
+      <source src="./movies/videoplayback.mp4" />
+      <source src="./movies/videoplayback.mp4" />
+      <source src="./movies/videoplayback.mp4" />
+    </video>
+  </body>
+</html>
