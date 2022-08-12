@@ -15,6 +15,15 @@ body{
 	margin:15px;
 	padding:10px;
 }
+#newItem img{
+	width: 170px;
+	float: left;
+}
+#newItem span{
+	/* border: 1px solid pink; */
+	display: block;
+	margin: 8px;
+}
 #content{
 	border-right:1px solid #999; 
 	width:300px;

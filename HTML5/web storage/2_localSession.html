@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>session storage</title>
+  </head>
+  <body>
+    <button onclick="show()">Show storage</button>
+  </body>
+  <script>
+    //localStorage -> 會一直在
+    //sessionStorage -> 視窗關掉後就會清掉了
+    function show() {
+      let storage = localStorage;
+      //給個變數 以後維護時比較好修改
+      if (storage['username'] == null) {
+        //判定如果還沒登入 尚未存取username
+        let name = prompt("What's your user name?");
+        storage['username'] = name;
+        //如果沒有 寫入username
+      } else {
+        //判定如果已經有登入
+        alert(storage['username']);
+        //彈出alert表示為username
+      }
+    }
+  </script>
+</html>
