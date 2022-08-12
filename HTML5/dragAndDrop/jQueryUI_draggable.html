@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery UI -- Draggable</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.js"></script>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+  </head>
+  <body>
+    <div style="width: 300px; height: 300px; background: #ccc">
+      <span style="background: palevioletred" id="drag">Drag me</span>
+    </div>
+    <p id="feedback"></p>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $('#drag').draggable({
+        cursor: 'pointer',
+        // revert: true, //每次拖曳都飛回原點
+        // axis: 'x', //只能X軸拖曳
+
+        //限制拖曳範圍
+        containment: 'parent', //推薦使用
+        // containment: 'window',
+        // containment: 'document',
+        // containment: [0, 0, 100, 100],//指定座標範圍
+
+        //以下兩個不要一起寫，因為start只有一瞬間 如果寫了drag就會被覆蓋掉
+        start() {
+          // $('#feedback').text('Dragging started');
+        },
+        drag() {
+          $('#feedback').text('Dragging');
+        },
+      });
+    });
+  </script>
+</html>
