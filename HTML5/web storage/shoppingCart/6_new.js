@@ -106,7 +106,7 @@ function creatCarList(itemId, itemValue) {
     total -= parseInt(itemValue.split('|')[2]);
     document.getElementById('total').innerText = total;
     // 2.清除 storage
-    //拿掉該Key值 (整個被拿掉)
+    //拿掉該Key值 
     storage.removeItem(itemId);
     storage['addItemList'] = storage['addItemList'].replace(`${itemId}, `, ``);
 
